@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html ng-app="nodeTodo">
+<head>
+<title> Hypernis wire chambers </title> 
+<style>
+canvas { width: 20%; height: 20% }
+  p1 {font: 18px "Lucida Grande", Helvetica, Arial, sans-serif;}
+
+  .p2 {
+  position: fixed; /* Абсолютное позиционирование */
+  bottom: -90px; /* Положение от нижнего края */
+  left: 15px; /* Положение от правого края */
+}
+  </style>
+</head>
+  <body ng-controller='mainController'>
+
+  <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" media="screen">
+  <script src="//code.jquery.com/jquery-2.2.4.min.js" type="text/javascript"></script>
+  <script type="text/javascript" src="http://www.google.com/jsapi?ext.js"></script>
+  <script type="text/javascript" src="https://www.google.com/jsapi"></script>
+  <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" type="text/javascript"></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.6/angular.min.js"></script>
+  <script src="javascripts/three.js"></script>
+  <script src="javascripts/Detector.js"></script>
+  
+<div id='MainMenu' style="position: absolute; left:1%; top:10%">
+		
+  <button type="submit" onclick="location.href='/'" class="btn btn-primary btn-lg" style="position: absolute; top:0px"   >    Wires        </button>
+  <button type="submit" onclick="location.href='/files'" class="btn btn-primary btn-lg"  style="position: absolute; top:50px" >    Files        </button>
+  <button type="submit" onclick="location.href='/video'" class="btn btn-primary btn-lg"  style="position: absolute; top:100px">    LiveCamera       </button>
+  
+  <button type="submit" class="btn btn-primary btn-lg"  style="position: absolute; top:300px" ng-click="switch_webgl()">    WebGL_off_on       </button>
+
+</div>
+
+<div id='Chambers' style="position: absolute; left:15%"> 
+<p1>-----------------------------
+  Hypernis wire chambers
+------------------------------
+</p1><br />
+  <button type="submit" class="btn btn-primary btn-lg" ng-click="getChambers2(1,100)">Chamber1</button>
+  <button type="submit" class="btn btn-primary btn-lg" ng-click="getChambers2(2,100)">Chamber2</button>
+  <button type="submit" class="btn btn-primary btn-lg" ng-click="getChambers2(3,100)">Chamber3</button>
+  <button type="submit" class="btn btn-primary btn-lg" ng-click="getChambers2(4,100)">Chamber4</button>
+  <button type="submit" class="btn btn-primary btn-lg" ng-click="getChambers2(5,6)">Chamber5_6</button>
+  <button type="submit" class="btn btn-primary btn-lg" ng-click="getChambers2(7,8)">Chamber7_8</button>
+  <button type="submit" class="btn btn-primary btn-lg" ng-click="getChambers2(9,10)">Chamber9_10</button>
+        
+  	<div id='chart21' style="position: absolute; left:0%"></div>
+        <div id='chart22' style="position: absolute; left:40%"></div>
+
+  </div>
+  
+  <div id='webgl' class='p2' style='z-index:1'></div>
+  <div id='logos' style="position: fixed; bottom: 1%; right: 0%">
+  	<img src='/images/nodejs.png' width=100>
+	<img src='/images/angular.png' width=100>
+	<img src='/images/postgresql.gif' width=100>
+	<img src='/images/webgl.png' width=100>
+  </div>
+  <script src="javascripts/app.js"></script>
+  </body>
+
+</html>
